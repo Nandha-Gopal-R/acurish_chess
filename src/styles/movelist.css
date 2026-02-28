@@ -1,0 +1,277 @@
+/* container */
+.move-list-root {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  color: #e6eef8;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue";
+  box-sizing: border-box;
+}
+
+/* header row */
+.move-list-header {
+  display: grid;
+  grid-template-columns: 50px 1fr 1fr;
+  gap: 10px;
+  padding: 8px 12px;
+  font-weight: 700;
+  font-size: 13px;
+  color: #c4b5fd;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+/* body */
+.move-list-body {
+  overflow-y: auto;
+  margin-top: 8px;
+  flex: 1;
+  padding-right: 6px;
+}
+
+/* each move row pair */
+.move-row-wrapper {
+  display: grid;
+  grid-template-columns: 50px 1fr 1fr;
+  gap: 10px;
+  align-items: center;
+  padding: 6px 6px;
+  border-radius: 10px;
+  transition: background 160ms, transform 120ms;
+}
+
+.move-row-wrapper:hover {
+  background: rgba(124,58,237,0.06);
+}
+
+/* move number column */
+.move-number {
+  font-weight: 700;
+  color: rgba(255,255,255,0.55);
+  padding-left: 6px;
+}
+
+/* single move cell */
+.move-cell {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 120ms ease, box-shadow 160ms;
+  background: transparent;
+}
+
+/* empty placeholder */
+.move-cell.empty {
+  opacity: 0.45;
+  cursor: default;
+}
+
+/* left side of cell: piece + SAN */
+.move-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.move-piece-icon {
+  width: 18px;
+  height: 18px;
+  display: block;
+  flex-shrink: 0;
+}
+
+.move-san {
+  font-weight: 600;
+  font-size: 16px;
+  color: inherit;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+/* right side: accuracy + badge */
+.move-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255,255,255,0.75);
+  min-width: 0;
+}
+
+.move-accuracy {
+  font-size: 12px;
+  color: rgba(255,255,255,0.75);
+  min-width: 36px;
+  text-align: right;
+}
+
+/* small badge container */
+.move-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  background: rgba(255,255,255,0.03);
+  color: currentColor;
+}
+
+/* when hovered / clicked */
+.move-cell:hover { transform: translateX(4px); }
+
+/* active highlight */
+.move-cell.active {
+  background: linear-gradient(90deg, rgba(124,58,237,0.95), rgba(167,139,250,0.95));
+  color: #fff;
+  box-shadow: 0 6px 22px rgba(124,58,237,0.16), 0 2px 6px rgba(0,0,0,0.4);
+  transform: translateX(0);
+}
+
+/* classification color classes (affect text + badge color) */
+.move-brilliant { color: #00e5ff; }
+.move-great { color: #00bcd4; }
+.move-best { color: #4caf50; }
+.move-excellent { color: #81c784; }
+.move-good { color: #cbd5e1; }
+.move-inaccuracy { color: #facc15; }
+.move-mistake { color: #fb923c; }
+.move-miss { color: #f87171; }
+.move-blunder { color: #ef4444; }
+
+/* small icon sizing */
+.class-icon { width: 14px; height: 14px; display: block; }
+
+/* scrollbar */
+.move-list-body::-webkit-scrollbar { width: 7px; }
+.move-list-body::-webkit-scrollbar-thumb { background: rgba(124,58,237,0.5); border-radius: 6px; }
+
+/* responsive small screens */
+@media (max-width: 700px) {
+  .move-list-root { padding: 10px; }
+  .move-number { display: none; }
+  .move-list-header { grid-template-columns: 1fr 1fr; }
+  .move-row-wrapper { grid-template-columns: 1fr 1fr; }
+}
+
+.classification-icon-img {
+  width: 25px;      /* scaled from 500px */
+  height: 25px;
+  object-fit: contain;
+  display: block;
+}
+
+.move-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.move-cell {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.move-piece-icon {
+  width: 18px;
+  height: 18px;
+}
+
+.move-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* =====================================================
+   MOVE LIST – FINAL MOBILE GRID FIX
+   Keeps # | White | Black perfectly aligned
+   Desktop unaffected
+===================================================== */
+@media (max-width: 700px) {
+
+  /* Keep header hidden */
+  .move-list-header {
+    display: none !important;
+  }
+
+  .move-list-root {
+    padding: 12px !important;
+  }
+
+  .move-list-body {
+    padding-right: 0 !important;
+  }
+
+  /* RESTORE proper 3-column layout */
+  .move-row-wrapper {
+    display: grid !important;
+    grid-template-columns: 35px 1fr 1fr !important;
+    gap: 10px !important;
+    align-items: center !important;
+    padding: 10px 6px !important;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+
+  /* Move number visible again */
+  .move-number {
+    display: block !important;
+    font-size: 12px !important;
+    text-align: center !important;
+    color: rgba(255,255,255,0.5);
+  }
+
+  /* Clean move cell */
+  .move-cell {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+
+    background: transparent !important;
+    padding: 6px 4px !important;
+    border-radius: 8px !important;
+    box-shadow: none !important;
+  }
+
+  /* Remove hover shift */
+  .move-cell:hover {
+    transform: none !important;
+  }
+
+  /* Better spacing */
+  .move-left {
+    gap: 6px !important;
+  }
+
+  .move-piece-icon {
+    width: 18px !important;
+    height: 18px !important;
+  }
+
+  .move-san {
+    font-size: 15px !important;
+    font-weight: 600 !important;
+  }
+
+  .classification-icon-img {
+    width: 18px !important;
+    height: 18px !important;
+  }
+
+  /* Subtle active highlight */
+  .move-cell.active {
+    background: linear-gradient(90deg, rgba(124,58,237,0.95), rgba(167,139,250,0.95)) !important;
+    color: #ffffff !important;
+  }
+
+}

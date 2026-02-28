@@ -1,0 +1,197 @@
+/* ================================
+   FINAL CLEAN MOBILE FIX
+================================ */
+
+@media (max-width: 1024px) {
+
+  html, body {
+    margin: 0;
+    padding: 0;
+  }
+
+.analysis-root {
+  width: 100vw !important;
+  height: 100dvh !important;
+  display: flex !important;
+  flex-direction: column !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+    margin: 0 !important;
+}
+
+.analysis-container {
+  flex: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+  /* REPORT TOP */
+  .report-panel {
+    width: 100%;
+    margin: 0 !important;
+    padding: 12px;
+    border-radius: 0;
+    overflow: hidden;
+  }
+
+.tab-pages {
+  height: auto !important;
+}
+
+.tab-page {
+  height: auto !important;
+  max-height: 100% !important;
+  overflow-y: auto !important;
+}
+
+  /* BOARD CENTER */
+.board-panel {
+  flex: 1 1 auto !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  padding: 6px 0 !important;
+}
+
+
+  .board-card {
+  width: 92vw;
+  max-width: 92vw;
+  max-height: 41vh;   /* 🔥 THIS is the key */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+}
+
+  .board-card > div,
+  .board-card .chessboard,
+  .board-card .react-chessboard {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  /* CONTROLS BOTTOM */
+  .mobile-controls {
+  flex: 0 0 80px;
+  height: 80px;
+  width: 100%;
+  display: flex;
+  justify-content: center;   /* center horizontally */
+  align-items: center;       /* center vertically */
+}
+
+.mobile-controls .analysis-controls {
+  width: auto;               /* 🔥 important */
+  padding: 12px 18px;
+  gap: 16px;
+  border-radius: 40px;       /* pill shape */
+  background: linear-gradient(
+    145deg,
+    rgba(124, 58, 237, 0.25),
+    rgba(30, 18, 55, 0.85)
+  );
+  box-shadow:
+    0 15px 40px rgba(124,58,237,0.25),
+    0 6px 18px rgba(0,0,0,0.6);
+}
+
+  /* HIDE DESKTOP THINGS */
+  .desktop-controls-wrapper,
+  .analysis-footer,
+  .capture-wrapper,
+  .capture-container {
+    display: none !important;
+  }
+
+/* ================================
+   SUMMARY MOBILE OPTIMIZATION
+================================ */
+
+/* stack accuracy blocks */
+.accuracy-wrapper {
+  flex-direction: column !important;
+  gap: 14px !important;
+}
+
+/* slightly reduce padding for compact feel */
+.accuracy-block {
+  padding: 16px !important;
+  border-radius: 14px !important;
+}
+
+.acc-value {
+  font-size: 32px !important;
+}
+
+/* stack missed wins */
+.tactical-wrapper {
+  flex-direction: column !important;
+  gap: 14px !important;
+}
+
+.miss-card {
+  padding: 14px !important;
+  border-radius: 14px !important;
+}
+
+/* stack classification cards */
+.classification-wrapper {
+  flex-direction: column !important;
+  gap: 18px !important;
+  margin-top: 18px !important;
+}
+
+.classification-card {
+  padding: 16px !important;
+  border-radius: 16px !important;
+}
+
+/* make classification rows slightly tighter */
+.class-row {
+  padding: 6px 4px !important;
+}
+
+/* reduce icon size slightly */
+.icon-cell {
+  width: 38px !important;
+  height: 38px !important;
+}
+
+.classification-img {
+  width: 32px !important;
+  height: 32px !important;
+}
+
+.label-text {
+  font-size: 14px !important;
+}
+
+.class-count {
+  font-size: 14px !important;
+}
+
+}
+
+/* SAFETY */
+@media (min-width: 1025px) {
+  .mobile-controls {
+    display: none !important;
+  }
+}
+
+/* =====================================
+   REMOVE GLOBAL APP PADDING ON MOBILE
+===================================== */
+
+@media (max-width: 1024px) {
+
+  .app-container {
+    padding: 0 !important;
+  }
+
+  .analysis-page {
+    padding: 0 !important;
+  }
+
+} 

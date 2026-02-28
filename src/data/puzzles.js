@@ -1,0 +1,12 @@
+export const puzzles = [
+  {
+    id: 1,
+    title: "Mate in 1",
+    fen: "6k1/5ppp/8/8/8/8/5PPP/6KQ w - - 0 1",
+  },
+  {
+    id: 2,
+    title: "Back Rank Mate",
+    fen: "3r2k1/5ppp/8/8/8/8/5PPP/3R2K1 w - - 0 1",
+  }
+];
