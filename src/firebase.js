@@ -1,14 +1,14 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
-  const firebaseConfig = {
-    apiKey: "AIzaSyAx1u2wZD7h9xRC9PMvbvRw6Siko3j4TCI",
-    authDomain: "checkmate-studio.firebaseapp.com",
-    projectId: "checkmate-studio",
-    storageBucket: "checkmate-studio.firebasestorage.app",
-    messagingSenderId: "270478328384",
-    appId: "1:270478328384:web:bd55ba85e2e2d20a8095a5"
-  };
+const firebaseConfig = {
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
+};
 
 const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
