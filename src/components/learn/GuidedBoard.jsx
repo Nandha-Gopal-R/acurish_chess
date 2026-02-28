@@ -524,7 +524,6 @@ export default function GuidedBoard({ guided, accent, onStartPuzzles, onReadTheo
                                     className="sidebar-btn sidebar-btn-pause"
                                     onClick={handlePause}
                                     disabled={isPlaying && controlsLocked && !stepMode}
-                                    data-tooltip="Pause"
                                 >
                                     ⏸
                                 </button>
@@ -533,7 +532,6 @@ export default function GuidedBoard({ guided, accent, onStartPuzzles, onReadTheo
                                     className="sidebar-btn sidebar-btn-resume"
                                     style={{ background: accent }}
                                     onClick={handleResume}
-                                    data-tooltip="Resume"
                                 >
                                     ▶
                                 </button>
@@ -550,9 +548,8 @@ export default function GuidedBoard({ guided, accent, onStartPuzzles, onReadTheo
                                     setStepMode((s) => !s);
                                 }}
                                 disabled={controlsLocked}
-                                data-tooltip={stepMode ? "Switch to Auto Mode" : "Switch to Step Mode"}
                             >
-                                {stepMode ? "⚡" : "👆"}
+                                🔄
                             </button>
 
                             {stepMode && (
@@ -561,7 +558,6 @@ export default function GuidedBoard({ guided, accent, onStartPuzzles, onReadTheo
                                         className="sidebar-btn sidebar-btn-prev"
                                         onClick={handlePrevStep}
                                         disabled={controlsLocked || currentStep < 0}
-                                        data-tooltip="Previous Step"
                                     >
                                         ←
                                     </button>
@@ -569,7 +565,6 @@ export default function GuidedBoard({ guided, accent, onStartPuzzles, onReadTheo
                                         className="sidebar-btn sidebar-btn-next"
                                         onClick={handleNextStep}
                                         disabled={controlsLocked || currentStep >= totalSteps - 1}
-                                        data-tooltip="Next Step"
                                     >
                                         →
                                     </button>
@@ -579,7 +574,6 @@ export default function GuidedBoard({ guided, accent, onStartPuzzles, onReadTheo
                             <button
                                 className="sidebar-btn sidebar-btn-mute"
                                 onClick={handleToggleMute}
-                                data-tooltip={voiceMuted ? "Unmute Voice" : "Mute Voice"}
                             >
                                 {voiceMuted ? "🔇" : "🔊"}
                             </button>
@@ -589,7 +583,6 @@ export default function GuidedBoard({ guided, accent, onStartPuzzles, onReadTheo
                             <button
                                 className="sidebar-btn sidebar-btn-exit"
                                 onClick={() => setPhase("idle")}
-                                data-tooltip="Exit to Menu"
                             >
                                 ↺
                             </button>

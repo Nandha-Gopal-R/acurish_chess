@@ -89,7 +89,7 @@ export default function PuzzleBoard({ puzzle, onSolve, status, setStatus }) {
 
 
 
-            <div className="puzzle-feedback" style={{ width: '100%', maxWidth: '480px', marginBottom: '12px' }}>
+            <div className="puzzle-feedback" style={{ marginBottom: '12px' }}>
                 {status === "correct" && (
                     <div className="feedback-correct">
                         <span>✅</span>

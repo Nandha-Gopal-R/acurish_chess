@@ -218,9 +218,9 @@ export default function LessonPage() {
                         <button
                             className="cta-btn"
                             style={{ background: level.gradient }}
-                            onClick={() => setSection("puzzles")}
+                            onClick={() => setSection(guided ? "demo" : "puzzles")}
                         >
-                            Start Puzzles →
+                            Start Learning →
                         </button>
                     </div>
                 )}

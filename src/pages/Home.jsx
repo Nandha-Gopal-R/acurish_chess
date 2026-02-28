@@ -239,7 +239,7 @@ export default function Home() {
         </div>
 
         <div className="footer-bottom">
-          © {new Date().getFullYear()} Checkmate Studio. All rights reserved.
+          © {new Date().getFullYear()} Acurish Chess. All rights reserved.
         </div>
       </footer>
     </>

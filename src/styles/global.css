@@ -484,10 +484,7 @@
   display: flex;
   flex-direction: column;
   gap: 18px;
-  overflow-y: auto;
   padding-right: 12px;
-  flex: 1;
-  min-height: 0;
 }
 
 @media (max-width: 600px) {
@@ -499,21 +496,26 @@
   .theory-card {
     padding: 16px;
   }
+
+  .puzzle-feedback {
+    font-size: 0.85rem;
+    padding: 10px 14px;
+    gap: 8px;
+    margin: 0 auto;
+    justify-content: center;
+  }
+
+  .feedback-correct,
+  .feedback-wrong,
+  .feedback-idle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+  }
 }
 
-/* Custom scrollbar for theory */
-.theory-section::-webkit-scrollbar {
-  width: 6px;
-}
 
-.theory-section::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.theory-section::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-}
 
 .theory-card {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0.015));
@@ -1014,12 +1016,11 @@
 .puzzle-feedback {
   width: 100%;
   max-width: 480px;
-  padding: 12px 16px;
-  border-radius: 10px;
   font-weight: 600;
   font-size: 0.95rem;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
 }
 
@@ -1027,18 +1028,24 @@
   background: rgba(16, 185, 129, 0.12);
   color: #34d399;
   border: 1px solid rgba(16, 185, 129, 0.25);
+  padding: 10px 18px;
+  border-radius: 10px;
 }
 
 .feedback-wrong {
   background: rgba(239, 68, 68, 0.12);
   color: #f87171;
   border: 1px solid rgba(239, 68, 68, 0.25);
+  padding: 10px 18px;
+  border-radius: 10px;
 }
 
 .feedback-idle {
   background: rgba(99, 102, 241, 0.08);
   color: rgba(230, 238, 248, 0.7);
   border: 1px solid rgba(99, 102, 241, 0.15);
+  padding: 10px 18px;
+  border-radius: 10px;
 }
 
 .puzzle-actions {

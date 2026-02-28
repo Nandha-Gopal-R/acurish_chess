@@ -14,11 +14,7 @@ const level1 = [
             "The queen alone can stalemate the enemy king — always check for stalemate!",
             "A common pattern: Queen restricts the king to a smaller area, then king marches up to help deliver mate",
         ],
-        timedChallenge: {
-            fen: "k7/2Q5/1K6/8/8/8/8/8 w - - 0 1",
-            hint: "Move the queen to the back rank",
-            timeLimit: 45,
-        },
+
         puzzles: [
             { id: "p1", fen: "k7/2Q5/1K6/8/8/8/8/8 w - - 0 1", hint: "Queen to the back rank delivers checkmate" },
             { id: "p2", fen: "k7/8/KQ6/8/8/8/8/8 w - - 0 1", hint: "The queen controls the back rank" },
@@ -41,11 +37,7 @@ const level1 = [
             "The final checkmate always happens on the edge of the board",
             "Watch out for stalemate when the enemy king is in the corner",
         ],
-        timedChallenge: {
-            fen: "7k/R7/6K1/8/8/8/8/8 w - - 0 1",
-            hint: "The rook delivers checkmate on the back rank",
-            timeLimit: 45,
-        },
+
         puzzles: [
             { id: "p1", fen: "7k/R7/6K1/8/8/8/8/8 w - - 0 1", hint: "Rook to the 8th rank is checkmate" },
             { id: "p2", fen: "k7/2K5/1R6/8/8/8/8/8 w - - 0 1", hint: "Bring the rook to the back rank" },
@@ -68,11 +60,7 @@ const level1 = [
             "Your king does not need to participate — two rooks are enough!",
             "Beware stalemate: don't push the black king if the only checks lead to stalemate",
         ],
-        timedChallenge: {
-            fen: "k7/8/8/8/8/8/1R6/1R4K1 w - - 0 1",
-            hint: "One rook delivers checkmate on the back rank",
-            timeLimit: 30,
-        },
+
         puzzles: [
             { id: "p1", fen: "k7/8/8/8/8/8/1R6/1R4K1 w - - 0 1", hint: "Move one rook to deliver back rank mate" },
             { id: "p2", fen: "7k/8/8/8/8/8/6RR/6K1 w - - 0 1", hint: "One rook checkmates on the back rank" },
@@ -95,11 +83,7 @@ const level1 = [
             "Always look for this pattern when your opponent hasn't created a pawn break for the king",
             "Luring the defender away with a sacrifice often opens the back rank",
         ],
-        timedChallenge: {
-            fen: "3r2k1/5ppp/8/8/8/8/5PPP/3R2K1 w - - 0 1",
-            hint: "White rook delivers checkmate on the 8th rank",
-            timeLimit: 30,
-        },
+
         puzzles: [
             { id: "p1", fen: "3r2k1/5ppp/8/8/8/8/5PPP/3R2K1 w - - 0 1", hint: "Your rook goes to the 8th rank" },
             { id: "p2", fen: "6k1/5ppp/8/8/8/8/5PPP/R5K1 w - - 0 1", hint: "The a1 rook finds the back rank" },
@@ -122,11 +106,7 @@ const level1 = [
             "Black can defend by moving the queen to e7 or the knight to f6",
             "Don't rely on Scholar's Mate against experienced players — use it to understand tactical threats",
         ],
-        timedChallenge: {
-            fen: "r1bqkb1r/pppp1ppp/2n2n2/4p2Q/2B1P3/8/PPPP1PPP/RNB1K1NR w KQkq - 4 4",
-            hint: "The queen strikes at the f7 weakness",
-            timeLimit: 30,
-        },
+
         puzzles: [
             { id: "p1", fen: "r1bqkb1r/pppp1ppp/2n2n2/4p2Q/2B1P3/8/PPPP1PPP/RNB1K1NR w KQkq - 4 4", hint: "Queen takes on f7 — checkmate!" },
             { id: "p2", fen: "r1bqkb1r/pppp1ppp/2n5/4p2Q/2B1P3/8/PPPP1PPP/RNB1K1NR w KQkq - 2 3", hint: "Same pattern — queen targets f7" },
